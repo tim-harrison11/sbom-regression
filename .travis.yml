@@ -38,12 +38,12 @@
   language: python
   script:
     - python hello_world.py
-  addons:
-    sbom:
-      on:
-        branch: 'sbom_one_fix'
-      run_phase: 'before_script'
-      output_format: 'cyclonedx-json'
+#   addons:
+#     sbom:
+#       on:
+#         branch: 'sbom_one_fix'
+#       run_phase: 'before_script'
+#       output_format: 'cyclonedx-json'
 #       input_dir: '/sbom/python'
 #       output_dir: '/sbom/python'
 #       deploy:
