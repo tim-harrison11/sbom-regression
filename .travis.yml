@@ -1,8 +1,6 @@
 os: linux
-jobs:
-  include:
-    - dist: focal
-      group: edge
-      language: python
-      script:
-        - python hello_world.py
+dist: focal
+group: edge
+language: python
+script:
+  - python hello_world.py
