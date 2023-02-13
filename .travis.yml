@@ -2,10 +2,7 @@ os: linux
 jobs:
   include:
     - dist: focal
-      virt: vm
       language: python
-      python:
-        - "3.9"
       arch: amd64
       script:
         - python hello_world.py
