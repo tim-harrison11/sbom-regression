@@ -2,7 +2,7 @@ os: linux
 jobs:
   include:
     - dist: focal
+      group: edge
       language: python
-      arch: amd64
       script:
         - python hello_world.py
