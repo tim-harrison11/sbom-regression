@@ -1,6 +1,11 @@
 os: linux
-dist: focal
-arch: amd64
-language: python
-script:
-  - python hello_world.py
+jobs:
+  include:
+    - dist: focal
+      virt: vm
+      language: python
+      python:
+        - "3.9"
+      arch: amd64
+      script:
+        - python hello_world.py
