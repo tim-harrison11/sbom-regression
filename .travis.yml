@@ -29,5 +29,6 @@ jobs:
         - cosign verify --key cosign.pub arthanaharidas/python-hello-world
         - docker logout
 
+
 keys:
   - Art
