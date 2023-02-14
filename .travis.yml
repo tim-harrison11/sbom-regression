@@ -2,12 +2,6 @@ os: linux
 dist: focal
 language: python
 addons: 
-  - sbom:
-    on:
-      branch: sbom_one_fix
-      pr: true
-      run_phase: before_script
-      output-format: cyclonedx-json
-      output-dir: '/'
+  sbom
 script:
   - python hello_world.py
