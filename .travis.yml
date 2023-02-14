@@ -2,6 +2,7 @@ os: linux
 dist: focal
 language: python
 addons: 
-  sbom
+  - sbom
+  - mariadb
 script:
   - python hello_world.py
