@@ -5,8 +5,8 @@ addons:
   - sbom:
       on:
         branch: sbom_one_fix
-        run_phase: before_script
-        output_format: spdx-json
+      run_phase: before_script
+      output_format: spdx-json
   - mariadb
 script:
   - python hello_world.py
