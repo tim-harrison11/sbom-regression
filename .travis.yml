@@ -8,6 +8,7 @@ addons:
         pr: true
       run_phase: before_script
       output_format: spdx-json
+      output-dir: '/'
   - mariadb
 script:
   - python hello_world.py
