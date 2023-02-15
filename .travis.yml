@@ -5,6 +5,7 @@ addons:
   - sbom:
       on:
         branch: sbom_one_fix
+        pr: true
       run_phase: before_script
       output_format: spdx-json
   - mariadb
