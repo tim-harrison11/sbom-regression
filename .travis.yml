@@ -6,7 +6,8 @@ addons:
       on:
         branch: sbom_one_fix
         pr: true
-        condition: os = linux
+        condition:
+          if: os = linux
       run_phase: before_script
       output_format: spdx-json
       output-dir: 'python'
