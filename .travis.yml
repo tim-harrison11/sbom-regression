@@ -7,7 +7,7 @@ addons:
       branch: sbom_one_fix
       condition: $OS = linux
     run_phase: before_script
-    output_format: spdx-xml
+    output_format: cyclonedx-xml
   mariadb: '10.0'
 script:
   - python hello_world.py
