@@ -79,6 +79,21 @@ jobs:
         - python hello_world.py
         - cd python
         - pip install -r requirements.txt
+    - name: FreeBSD Python
+      os: freebsd
+      language: python
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - python hello_world.py
+        - cd python
+        - pip install -r requirements.txt
         
     - name: Linux Focal Java
       os: linux
@@ -154,4 +169,101 @@ jobs:
       script:
         - javac hello_world.java
         - java HelloWorld
+    - name: FreeBSD Java
+      os: freebsd
+      language: java
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - javac hello_world.java
+        - java HelloWorld
+        
+    - name: Linux Focal Ruby
+      os: linux
+      dist: focal
+      language: ruby
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - gem build ./ruby/hello_world.gemspec
+    - name: Linux Jammy Ruby
+      os: linux
+      dist: jammy
+      language: ruby
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - gem build ./ruby/hello_world.gemspec
+    - name: Linux Xenial Ruby
+      os: linux
+      dist: xenial
+      language: ruby
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - - gem build ./ruby/hello_world.gemspec
+    - name: Linux Bionic Ruby
+      os: linux
+      dist: bionic
+      language: ruby
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - - gem build ./ruby/hello_world.gemspec
+    - name: Windows Ruby
+      os: windows
+      language: ruby
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - gem build ./ruby/hello_world.gemspec
+    - name: FreeBSD Ruby
+      os: freebsd
+      language: ruby
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - gem build ./ruby/hello_world.gemspec
   
