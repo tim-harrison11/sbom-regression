@@ -1,12 +1,76 @@
 jobs:
   include:
-    - os: linux
+    - name: Linux Focal Python
+      os: linux
       dist: focal
       language: python
       addons:
         sbom:
           on:
-            branch: sbom_one_fix
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - python hello_world.py
+        - cd python
+        - pip install -r requirements.txt
+    - name: Linux Jammy Python
+      os: linux
+      dist: jammy
+      language: python
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - python hello_world.py
+        - cd python
+        - pip install -r requirements.txt
+    - name: Linux Xenial Python
+      os: linux
+      dist: xenial
+      language: python
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - python hello_world.py
+        - cd python
+        - pip install -r requirements.txt
+    - name: Linux Bionic Python
+      os: linux
+      dist: bionic
+      language: python
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - python hello_world.py
+        - cd python
+        - pip install -r requirements.txt
+    - name: Windows Python
+      os: windows
+      language: python
+      addons:
+        sbom:
+          on:
+            branch: main
             condition: $OS = linux
           run_phase: before_script
           output_format: cyclonedx-xml
