@@ -20,6 +20,8 @@ jobs:
       os: linux
       dist: jammy
       language: python
+      python:
+        - "3.9"
       addons:
         sbom:
           on:
@@ -299,9 +301,25 @@ jobs:
       script:
         - cd go
         - go build
-    - name: Windows Ruby
-      os: windows
-      language: go
+#     - name: Windows Ruby
+#       os: windows
+#       language: go
+#       addons:
+#         sbom:
+#           on:
+#             branch: main
+#             condition: $OS = linux
+#           run_phase: before_script
+#           output_format: cyclonedx-xml
+#         mariadb: '10.0'
+#       script:
+#         - cd go
+#         - go build
+        
+    - name: Linux Focal Node JS
+      os: linux
+      dist: focal
+      language: node_js
       addons:
         sbom:
           on:
@@ -311,7 +329,71 @@ jobs:
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
-        - cd go
-        - go build
+        - cd node
+        - npm install
+        - node hello_world.js
+    - name: Linux Jammy Node JS
+      os: linux
+      dist: jammy
+      language: node_js
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - cd node
+        - npm install
+        - node hello_world.js
+    - name: Linux Xenial Node JS
+      os: linux
+      dist: xenial
+      language: node_js
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - cd node
+        - npm install
+        - node hello_world.js
+    - name: Linux Bionic Node JS
+      os: linux
+      dist: bionic
+      language: node_js
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - cd node
+        - npm install
+        - node hello_world.js
+    - name: Windows Node JS
+      os: windows
+      language: node_js
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - cd node
+        - npm install
+        - node hello_world.js
         
   
