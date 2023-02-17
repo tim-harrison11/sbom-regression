@@ -1,16 +1,18 @@
-os: linux
-dist: focal
-language: python
-addons:
-  sbom:
-    on:
-      branch: sbom_one_fix
-      condition: $OS = linux
-    run_phase: before_script
-    output_format: cyclonedx-xml
-  mariadb: '10.0'
-script:
-  - python hello_world.py
-  - cd python
-  - pip install -r requirements.txt
+jobs:
+  include:
+    - os: linux
+      dist: focal
+      language: python
+      addons:
+        sbom:
+          on:
+            branch: sbom_one_fix
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - python hello_world.py
+        - cd python
+        - pip install -r requirements.txt
   
