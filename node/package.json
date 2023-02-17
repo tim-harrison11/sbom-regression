@@ -6,4 +6,19 @@
   "scripts": {
     "start": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/travis-ci/travis-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/travis-ci/travis-tests/issues"
+  },
+  "homepage": "https://github.com/travis-ci/travis-tests#readme",
+  "dependencies": {
+    "markdown-toc": "^1.2.0",
+    "yamljs": "^0.3.0"
+  }
 }
