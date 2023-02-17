@@ -79,4 +79,84 @@ jobs:
         - python hello_world.py
         - cd python
         - pip install -r requirements.txt
+        
+    - name: Linux Focal Java
+      os: linux
+      dist: focal
+      language: java
+      install: ant deps
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - javac hello_world.java
+        - java HelloWorld
+    - name: Linux Jammy Java
+      os: linux
+      dist: jammy
+      language: java
+      install: ant deps
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - javac hello_world.java
+        - java HelloWorld
+    - name: Linux Xenial Java
+      os: linux
+      dist: xenial
+      language: java
+      install: ant deps
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - javac hello_world.java
+        - java HelloWorld
+    - name: Linux Bionic Java
+      os: linux
+      dist: bionic
+      language: java
+      install: ant deps
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - javac hello_world.java
+        - java HelloWorld
+    - name: Windows Java
+      os: windows
+      language: java
+      install: ant deps
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
+      script:
+        - javac hello_world.java
+        - java HelloWorld
   
