@@ -66,21 +66,6 @@ jobs:
         - python hello_world.py
         - cd python
         - pip install -r requirements.txt
-#     - name: Windows Python
-#       os: windows
-#       language: python
-#       addons:
-#         sbom:
-#           on:
-#             branch: main
-#             condition: $OS = linux
-#           run_phase: before_script
-#           output_format: cyclonedx-xml
-#         mariadb: '10.0'
-#       script:
-#         - python hello_world.py
-#         - cd python
-#         - pip install -r requirements.txt
         
     - name: Linux Focal Java
       os: linux
@@ -142,34 +127,6 @@ jobs:
       script:
         - javac hello_world.java
         - java HelloWorld
-#     - name: Windows Java
-#       os: windows
-#       language: java
-#       addons:
-#         sbom:
-#           on:
-#             branch: main
-#             condition: $OS = linux
-#           run_phase: before_script
-#           output_format: cyclonedx-xml
-#         mariadb: '10.0'
-#       script:
-#         - javac hello_world.java
-#         - java HelloWorld
-#     - name: FreeBSD Java
-#       os: freebsd
-#       language: java
-#       addons:
-#         sbom:
-#           on:
-#             branch: main
-#             condition: $OS = linux
-#           run_phase: before_script
-#           output_format: cyclonedx-xml
-#         mariadb: '10.0'
-#       script:
-#         - javac hello_world.java
-#         - java HelloWorld
         
     - name: Linux Focal Ruby
       os: linux
@@ -227,19 +184,6 @@ jobs:
         mariadb: '10.0'
       script:
         - gem build ./ruby/hello_world.gemspec
-#     - name: Windows Ruby
-#       os: windows
-#       language: ruby
-#       addons:
-#         sbom:
-#           on:
-#             branch: main
-#             condition: $OS = linux
-#           run_phase: before_script
-#           output_format: cyclonedx-xml
-#         mariadb: '10.0'
-#       script:
-#         - gem build ./ruby/hello_world.gemspec
         
     - name: Linux Focal Go
       os: linux
@@ -301,7 +245,7 @@ jobs:
       script:
         - cd go
         - go build
-#     - name: Windows Ruby
+#     - name: Windows Go (not working)
 #       os: windows
 #       language: go
 #       addons:
@@ -380,7 +324,7 @@ jobs:
         - cd node
         - npm install
         - node hello_world.js
-    - name: Windows Node JS
+    - name: Windows Node JS (not working)
       os: windows
       language: node_js
       addons:
