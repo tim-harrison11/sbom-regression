@@ -9,7 +9,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -27,7 +27,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -43,7 +43,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -59,7 +59,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -76,7 +76,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -91,7 +91,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -106,7 +106,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -121,7 +121,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -137,7 +137,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -151,7 +151,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -165,7 +165,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -179,7 +179,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -194,7 +194,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -209,7 +209,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -224,7 +224,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -239,7 +239,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -253,7 +253,7 @@ jobs:
 #           on:
 #             branch: main
 #             condition: $OS = linux
-#           run_phase: before_script
+#           run_phase: after_success
 #           output_format: cyclonedx-xml
 #         mariadb: '10.0'
 #       script:
@@ -269,7 +269,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -285,7 +285,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -301,7 +301,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -317,7 +317,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: script
+          run_phase: after_success
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
