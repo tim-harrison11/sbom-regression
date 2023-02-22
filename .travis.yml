@@ -71,12 +71,15 @@ jobs:
       os: linux
       dist: focal
       language: java
+      jdk:
+        - openjdk8
+        - openjdk11
       addons:
         sbom:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: after_success
+          run_phase: before_script
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
