@@ -9,7 +9,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: after_success
+          run_phase: after_failure
           output_format: cyclonedx-xml
         mariadb: '10.0'
       script:
@@ -27,7 +27,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: after_success
+          run_phase: script
           output_format: cyclonedx-json
         mariadb: '10.0'
       script:
@@ -59,8 +59,7 @@ jobs:
           on:
             branch: main
             condition: $OS = linux
-          run_phase: after_success
-          output_format: spdx-xml
+          run_phase: before_script
         mariadb: '10.0'
       script:
         - python hello_world.py
