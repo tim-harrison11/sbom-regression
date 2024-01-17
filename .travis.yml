@@ -356,6 +356,6 @@ jobs:
 #      script:
 #        - cd node
 #       - npm install
-        - node hello_world.js
+#        - node hello_world.js
         
   
