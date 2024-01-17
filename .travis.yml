@@ -8,6 +8,7 @@ jobs:
           sbom:
             on:
               branch: main
+              condition: $OS = linux
             run_phase: after_success
             output_format: cyclonedx-xml
         script:
