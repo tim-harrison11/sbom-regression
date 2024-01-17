@@ -354,8 +354,8 @@ jobs:
 #           output_format: cyclonedx-xml
 #         mariadb: '10.0'
 #      script:
-        - cd node
-        - npm install
+#        - cd node
+#       - npm install
         - node hello_world.js
         
   
