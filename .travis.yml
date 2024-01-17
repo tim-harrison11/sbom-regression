@@ -139,20 +139,20 @@ jobs:
 #         - javac hello_world.java
 #         - java HelloWorld
         
-#     - name: Linux Focal Ruby
-#       os: linux
-#       dist: focal
-#       language: ruby
-#       addons:
-#         sbom:
-#           on:
-#             branch: main
-#             condition: $OS = linux
-#           run_phase: after_success
-#           output_format: cyclonedx-xml
-#         mariadb: '10.0'
-#       script:
-#         - gem build ./ruby/hello_world.gemspec
+     - name: Linux Focal Ruby
+       os: linux
+       dist: focal
+       language: ruby
+       addons:
+         sbom:
+           on:
+             branch: main
+             condition: $OS = linux
+           run_phase: after_success
+           output_format: cyclonedx-xml
+         mariadb: '10.0'
+       script:
+         - gem build ./ruby/hello_world.gemspec
 #     - name: Linux Jammy Ruby
 #       os: linux
 #       dist: jammy
@@ -343,9 +343,9 @@ jobs:
 #         - cd node
 #         - npm install
 #         - node hello_world.js
-    - name: Windows Node JS (not working)
-      os: windows
-      language: node_js
+#    - name: Windows Node JS (not working)
+#      os: windows
+#      language: node_js
 #       addons:
 #         sbom:
 #           on:
@@ -354,7 +354,7 @@ jobs:
 #           run_phase: before_script
 #           output_format: cyclonedx-xml
 #         mariadb: '10.0'
-      script:
+#      script:
         - cd node
         - npm install
         - node hello_world.js
