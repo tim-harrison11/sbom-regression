@@ -1,5 +1,19 @@
 jobs:
   include:
+      - name: Linux Focal Ruby
+        os: linux
+        dist: focal
+        language: ruby
+        addons:
+          sbom:
+            on:
+              branch: main
+              condition: $OS = linux
+            run_phase: after_success
+            output_format: cyclonedx-xml
+          mariadb: '10.0'
+        script:
+          - gem build ./ruby/hello_world.gemspec
 #     - name: Linux Focal Python
 #       os: linux
 #       dist: focal
@@ -138,21 +152,6 @@ jobs:
 #       script:
 #         - javac hello_world.java
 #         - java HelloWorld
-        
-     - name: Linux Focal Ruby
-       os: linux
-       dist: focal
-       language: ruby
-       addons:
-         sbom:
-           on:
-             branch: main
-             condition: $OS = linux
-           run_phase: after_success
-           output_format: cyclonedx-xml
-         mariadb: '10.0'
-       script:
-         - gem build ./ruby/hello_world.gemspec
 #     - name: Linux Jammy Ruby
 #       os: linux
 #       dist: jammy
