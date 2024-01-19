@@ -5,12 +5,12 @@ jobs:
       dist: focal
       language: ruby
       addons:
-        sbom: true
-        on:
-          branch: main
-          condition: $OS = linux
-        run_phase: after_success
-        output_format: cyclonedx-xml
+        sbom: 
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: after_success
+          output_format: cyclonedx-json
       script:
         - gem build ./ruby/hello_world.gemspec
 
