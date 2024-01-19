@@ -5,7 +5,7 @@ jobs:
         dist: focal
         language: ruby
         addons:
-          sbom:
+          sbom: true
             on:
               branch: main
               condition: $OS = linux
