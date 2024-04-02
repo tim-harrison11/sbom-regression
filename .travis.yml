@@ -13,18 +13,18 @@ jobs:
       script:
         - gem build ./ruby/hello_world.gemspec
 
-     - name: Linux Focal Python
-       os: linux
-       dist: focal
-       language: python
-       addons:
-         sbom:
-           on:
-             branch: main
-             condition: $OS = linux
-           run_phase: before_script
-           output_format: cyclonedx-xml
-         mariadb: '10.0'
+    - name: Linux Focal Python
+      os: linux
+      dist: focal
+      language: python
+      addons:
+        sbom:
+          on:
+            branch: main
+          condition: $OS = linux
+          run_phase: before_script
+          output_format: cyclonedx-xml
+        mariadb: '10.0'
        script:
          - python hello_world.py
          - cd python
