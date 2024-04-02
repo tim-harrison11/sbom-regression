@@ -5,14 +5,13 @@ jobs:
       dist: focal
       language: ruby
       addons:
-        sbom: 
+        sbom:
           on:
             branch: main
           run_phase: after_success
           output_format: cyclonedx-json
       script:
         - gem build ./ruby/hello_world.gemspec
-
     - name: Linux Focal Python
       os: linux
       dist: focal
@@ -24,11 +23,28 @@ jobs:
           condition: $OS = linux
           run_phase: before_script
           output_format: cyclonedx-xml
-        mariadb: '10.0'
-       script:
-         - python hello_world.py
-         - cd python
-         - pip install -r requirements.txt
+        mariadb: "10.0"
+      script:
+        - python hello_world.py
+        - cd python
+        - pip install -r requirements.txt
+    - name: Linux Focal Node JS
+      os: linux
+      dist: focal
+      language: node_js
+      addons:
+        sbom:
+          on:
+            branch: main
+            condition: $OS = linux
+          run_phase: after_success
+          output_format: cyclonedx-xml
+          input_dir: /node
+        mariadb: "10.0"
+      script:
+        - cd node
+        - npm install
+        - node hello_world.js
 #     - name: Linux Jammy Python
 #       os: linux
 #       dist: jammy
@@ -272,24 +288,6 @@ jobs:
 #       script:
 #         - cd go
 #         - go build
-        
-     - name: Linux Focal Node JS
-       os: linux
-       dist: focal
-       language: node_js
-       addons:
-         sbom:
-           on:
-             branch: main
-             condition: $OS = linux
-           run_phase: after_success
-           output_format: cyclonedx-xml
-           input_dir: '/node'
-         mariadb: '10.0'
-       script:
-         - cd node
-         - npm install
-         - node hello_world.js
 #     - name: Linux Jammy Node JS
 #       os: linux
 #       dist: jammy
