@@ -20,7 +20,6 @@ jobs:
         sbom:
           on:
             branch: main
-          condition: $OS = linux
           run_phase: before_script
           output_format: cyclonedx-xml
         mariadb: "10.0"
@@ -36,7 +35,6 @@ jobs:
         sbom:
           on:
             branch: main
-            condition: $OS = linux
           run_phase: after_success
           output_format: cyclonedx-xml
           input_dir: /node
